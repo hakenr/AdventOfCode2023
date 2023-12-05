@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1_Trebuchet", "Day1_Trebuchet\Day1_Trebuchet.csproj", "{AE8A7D4C-F0BD-4AEC-A968-B9C123BA1CBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4_Scratchcards", "Day4_Scratchcards\Day4_Scratchcards.csproj", "{BC122978-6EFF-4224-92E1-B09943C772CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE8A7D4C-F0BD-4AEC-A968-B9C123BA1CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE8A7D4C-F0BD-4AEC-A968-B9C123BA1CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE8A7D4C-F0BD-4AEC-A968-B9C123BA1CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC122978-6EFF-4224-92E1-B09943C772CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC122978-6EFF-4224-92E1-B09943C772CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC122978-6EFF-4224-92E1-B09943C772CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC122978-6EFF-4224-92E1-B09943C772CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
