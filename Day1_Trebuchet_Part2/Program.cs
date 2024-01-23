@@ -1,34 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 
-int Compute(string input)
+public class Program
 {
-	var sum = 0;
-	foreach (var line in input.Split(Environment.NewLine))
+	private static void Main(string[] args)
 	{
-		var firstNumber = Regex.Replace(line, @".*?(\d|one|two|three|four|five|six|seven|eight|nine).*", "$1");
-		var lastNumber = Regex.Replace(line, @".*(\d|one|two|three|four|five|six|seven|eight|nine).*", "$1");
 
-		int GetNumber(string number) => number switch
-		{
-			"one" => 1,
-			"two" => 2,
-			"three" => 3,
-			"four" => 4,
-			"five" => 5,
-			"six" => 6,
-			"seven" => 7,
-			"eight" => 8,
-			"nine" => 9,
-			_ => int.Parse(number)
-		};
-
-		Console.WriteLine($"{line} => {firstNumber}, {lastNumber} => {GetNumber(firstNumber)}, {GetNumber(lastNumber)}");
-		sum += GetNumber(firstNumber)*10 + GetNumber(lastNumber);
-	}
-	return sum;
-}
-
-var resultTest = Compute("""
+		var resultTest = Compute("""
 	two1nine
 	eightwothree
 	abcone2threexyz
@@ -37,7 +14,7 @@ var resultTest = Compute("""
 	zoneight234
 	7pqrstsixteen
 	""");
-var result = Compute("""
+		var result = Compute("""
 	ckmb52fldxkseven3fkjgcbzmnr7
 	gckhqpb6twoqnjxqplthree2fourkspnsnzxlz1
 	2onetwocrgbqm7
@@ -1040,4 +1017,34 @@ var result = Compute("""
 	3nine6five1
 	""");
 
-Console.WriteLine(result);
+		Console.WriteLine(result);
+	}
+
+	public static int Compute(string input)
+	{
+		var sum = 0;
+		foreach (var line in input.Split(Environment.NewLine))
+		{
+			var firstNumber = Regex.Replace(line, @".*?(\d|one|two|three|four|five|six|seven|eight|nine).*", "$1");
+			var lastNumber = Regex.Replace(line, @".*(\d|one|two|three|four|five|six|seven|eight|nine).*", "$1");
+
+			int GetNumber(string number) => number switch
+			{
+				"one" => 1,
+				"two" => 2,
+				"three" => 3,
+				"four" => 4,
+				"five" => 5,
+				"six" => 6,
+				"seven" => 7,
+				"eight" => 8,
+				"nine" => 9,
+				_ => int.Parse(number)
+			};
+
+			Console.WriteLine($"{line} => {firstNumber}, {lastNumber} => {GetNumber(firstNumber)}, {GetNumber(lastNumber)}");
+			sum += GetNumber(firstNumber) * 10 + GetNumber(lastNumber);
+		}
+		return sum;
+	}
+}

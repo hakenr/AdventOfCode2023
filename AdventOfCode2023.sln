@@ -13,23 +13,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day1_Trebuchet_Part2", "Day
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day5_SeedLocation", "Day5_SeedLocation\Day5_SeedLocation.csproj", "{64F865B3-2950-44CD-8C91-055243610A95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2_Cubes", "Day2_Cubes\Day2_Cubes.csproj", "{B1F68E86-8F30-4076-A13A-48CBCBAC4FCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2_Cubes", "Day2_Cubes\Day2_Cubes.csproj", "{B1F68E86-8F30-4076-A13A-48CBCBAC4FCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2_Part2", "Day2_Part2\Day2_Part2.csproj", "{4E617874-09D0-45E6-BA64-8A138F1A07BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2_Part2", "Day2_Part2\Day2_Part2.csproj", "{4E617874-09D0-45E6-BA64-8A138F1A07BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day8_LeftRight", "Day8_LeftRight\Day8_LeftRight.csproj", "{B18E8D4F-A44A-47C4-BB3D-CA40CEC07F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day8_LeftRight", "Day8_LeftRight\Day8_LeftRight.csproj", "{B18E8D4F-A44A-47C4-BB3D-CA40CEC07F0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day8_Part2", "Day8_Part2\Day8_Part2.csproj", "{D989894E-91DA-4B8D-90BF-544592415526}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day8_Part2", "Day8_Part2\Day8_Part2.csproj", "{D989894E-91DA-4B8D-90BF-544592415526}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day9_Extrapolation", "Day9_Extrapolation\Day9_Extrapolation.csproj", "{2CA3DDC6-5007-4515-8A54-CF60887D15B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day9_Extrapolation", "Day9_Extrapolation\Day9_Extrapolation.csproj", "{2CA3DDC6-5007-4515-8A54-CF60887D15B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day9_Extrapolation_Part2", "Day9_Extrapolation_Part2\Day9_Extrapolation_Part2.csproj", "{7CDC4AD5-5018-4779-9DEB-70E713807CE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day9_Extrapolation_Part2", "Day9_Extrapolation_Part2\Day9_Extrapolation_Part2.csproj", "{7CDC4AD5-5018-4779-9DEB-70E713807CE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day10_Pipes", "Day10_Pipes\Day10_Pipes.csproj", "{8B6ECE99-DEA6-4C78-BAB5-2CC60927472E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day10_Pipes", "Day10_Pipes\Day10_Pipes.csproj", "{8B6ECE99-DEA6-4C78-BAB5-2CC60927472E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3_PartNumbers", "Day3_PartNumbers\Day3_PartNumbers.csproj", "{3420E4E8-2926-498E-89A8-D76BA222E518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3_PartNumbers", "Day3_PartNumbers\Day3_PartNumbers.csproj", "{3420E4E8-2926-498E-89A8-D76BA222E518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3_Gears_Part2", "Day3_Gears_Part2\Day3_Gears_Part2.csproj", "{DA3B9448-F368-4F8A-8874-3F6C8F417EC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3_Gears_Part2", "Day3_Gears_Part2\Day3_Gears_Part2.csproj", "{DA3B9448-F368-4F8A-8874-3F6C8F417EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1_Trebuchet_Part2.Tests", "Day1_Trebuchet_Part2.Tests\Day1_Trebuchet_Part2.Tests.csproj", "{21BA345E-8B43-4DEA-802B-4642F7A321D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{DA3B9448-F368-4F8A-8874-3F6C8F417EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3B9448-F368-4F8A-8874-3F6C8F417EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA3B9448-F368-4F8A-8874-3F6C8F417EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BA345E-8B43-4DEA-802B-4642F7A321D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BA345E-8B43-4DEA-802B-4642F7A321D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BA345E-8B43-4DEA-802B-4642F7A321D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BA345E-8B43-4DEA-802B-4642F7A321D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
