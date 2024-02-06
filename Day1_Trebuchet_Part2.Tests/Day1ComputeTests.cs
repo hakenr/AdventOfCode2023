@@ -7,42 +7,45 @@ namespace Day1_Trebuchet_Part2.Tests
 		public void TwoNumbers()
 		{
 			// arrange
-			string input = "12";
-			int expected = 12;
+			var inputProviderStub = new TestInputProvider(input: "12");
+			var outputWriterMock = new TestOutputWriter();
+			var sut = new Solver(inputProviderStub, outputWriterMock, new NullLogger());
 
 			// act
-			int result = Program.Compute(input);
+			sut.Execute();
 
 			// assert
-			Assert.AreEqual(expected, result);
+			Assert.AreEqual(12, outputWriterMock.Output);
 		}
 
 		[TestMethod]
 		public void WordAndNumber()
 		{
 			// arrange
-			string input = "one4";
-			int expected = 14;
+			var inputProviderStub = new TestInputProvider(input: "one4");
+			var outputWriterMock = new TestOutputWriter();
+			var sut = new Solver(inputProviderStub, outputWriterMock, new NullLogger());
 
 			// act
-			int result = Program.Compute(input);
+			sut.Execute();
 
 			// assert
-			Assert.AreEqual(expected, result);
+			Assert.AreEqual(14, outputWriterMock.Output);
 		}
 
 		[TestMethod]
 		public void OverlappingWords()
 		{
 			// arrange
-			string input = "twone4";
-			int expected = 24;
+			var inputProviderStub = new TestInputProvider(input: "twone4");
+			var outputWriterMock = new TestOutputWriter();
+			var sut = new Solver(inputProviderStub, outputWriterMock, new NullLogger());
 
 			// act
-			int result = Program.Compute(input);
+			sut.Execute();
 
 			// assert
-			Assert.AreEqual(expected, result);
+			Assert.AreEqual(24, outputWriterMock.Output);
 		}
 
 		[TestMethod]
@@ -53,13 +56,15 @@ namespace Day1_Trebuchet_Part2.Tests
 				123
 				789
 				""";
-			int expected = 92;
+			var inputProviderStub = new TestInputProvider(input);
+			var outputWriterMock = new TestOutputWriter();
+			var sut = new Solver(inputProviderStub, outputWriterMock, new NullLogger());
 
 			// act
-			int result = Program.Compute(input);
+			sut.Execute();
 
 			// assert
-			Assert.AreEqual(expected, result);
+			Assert.AreEqual(92, outputWriterMock.Output);
 		}
 
 		[TestMethod]
@@ -68,12 +73,41 @@ namespace Day1_Trebuchet_Part2.Tests
 		{
 			// arrange
 			string input = "dsadas";
+			var inputProviderStub = new TestInputProvider(input);
+			var outputWriterMock = new TestOutputWriter();
+			var sut = new Solver(inputProviderStub, outputWriterMock, new NullLogger());
 
 			// act
-			int _ = Program.Compute(input);
+			sut.Execute();
 
 			// assert
 			// expected exception
+		}
+
+
+		private class TestInputProvider : IInputProvider
+		{
+			private readonly string _input;
+
+			public TestInputProvider(string input)
+			{
+				_input = input;
+			}
+
+			public string ProvideInput()
+			{
+				return _input;
+			}
+		}
+
+		private class TestOutputWriter : IOutputWriter
+		{
+			public int Output { get; private set; }
+
+			public void WriteOutput(int sum)
+			{
+				Output = sum;
+			}
 		}
 	}
 }
