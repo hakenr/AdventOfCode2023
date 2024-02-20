@@ -1,3 +1,5 @@
+using Moq;
+
 namespace Day1_Trebuchet_Part2.Tests
 {
 	[TestClass]
@@ -56,15 +58,31 @@ namespace Day1_Trebuchet_Part2.Tests
 				123
 				789
 				""";
-			var inputProviderStub = new TestInputProvider(input);
-			var outputWriterMock = new TestOutputWriter();
-			var sut = new Solver(inputProviderStub, outputWriterMock, new NullLogger());
+
+			int output = 0;
+			var inputProviderMock = new Mock<IInputProvider>();
+			inputProviderMock.Setup(x => x.ProvideInput()).Returns(input);
+			inputProviderMock.Setup(x => x.DoSomething(It.Is<int>(i => i > 0))).Returns(">0");
+			inputProviderMock.Setup(x => x.DoSomething(It.Is<int>(i => i % 2 == 0))).Returns("xx");
+			inputProviderMock.Setup(x => x.DoSomething(5)).Returns("five");
+			
+			//inputProviderMock.Setup(x => x.DoSomething(0))
+			//	.Returns("null")
+			//	.Callback<int>(i => mezivysledek = i);
+
+			var outputWriterMock = new Mock<IOutputWriter>();
+			outputWriterMock
+				.Setup(x => x.WriteOutput(It.IsAny<int>()))
+				.Callback<int>(i => output = i);
+
+			var sut = new Solver(inputProviderMock.Object, outputWriterMock.Object, new NullLogger());
 
 			// act
 			sut.Execute();
 
 			// assert
-			Assert.AreEqual(92, outputWriterMock.Output);
+			Assert.AreEqual(92, output);
+			//outputWriterMock.Verify(x => x.WriteOutput(92), Times.Once);
 		}
 
 		[TestMethod]
@@ -83,6 +101,15 @@ namespace Day1_Trebuchet_Part2.Tests
 			// assert
 			// expected exception
 		}
+
+		private class MockInputProvider : IInputProvider
+		{
+			public string ProvideInput()
+			{
+				return default; // null
+			}
+		}
+
 
 
 		private class TestInputProvider : IInputProvider

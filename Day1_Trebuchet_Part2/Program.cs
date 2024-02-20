@@ -1,22 +1,28 @@
 ﻿using Day1_Trebuchet_Part2;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 public class Program
 {
 	private static void Main(string[] args)
 	{
-		var solver = new Solver(
-			inputProvider: new ConsoleInputOutputService(),
-			outputWriter: new ConsoleInputOutputService(),
-			logger: new ConsoleLogger());
+		var builder = Host.CreateApplicationBuilder();
 
+		builder.Services.AddTransient<IInputProvider, ConsoleInputOutputService>();
+		builder.Services.AddTransient<IOutputWriter, ConsoleInputOutputService>();
+		builder.Services.AddTransient<ILogger, ConsoleLogger>();
+		builder.Services.AddTransient<Solver>();	
+
+		// Transient = pokaždé nová instance
+		// Scoped = jedna instance na request
+		// Singleton = jedna instance na celou aplikaci
+
+		var app = builder.Build();
+
+		var solver = app.Services.GetRequiredService<Solver>();	
 		solver.Execute();
 
-		var solver2 = new Solver(
-			inputProvider: new FileInputProvider(),
-			outputWriter: new ConsoleInputOutputService(),
-			logger: new NullLogger());
-
-		solver2.Execute();
 
 		Console.ReadLine();
 	}

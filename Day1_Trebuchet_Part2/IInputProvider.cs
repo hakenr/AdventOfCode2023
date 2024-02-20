@@ -9,5 +9,10 @@ namespace Day1_Trebuchet_Part2
 	public interface IInputProvider
 	{
 		string ProvideInput();
+
+		string DoSomething(int number)
+		{
+			return null;
+		}
 	}
 }
